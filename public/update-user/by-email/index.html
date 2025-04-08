@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update User Information</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <h2>Update <span id="user_email"></span></h2>
+  <p>This is the page where you actually can update the user information</p>
+  
+  <form onsubmit="handleSubmit(event)">
+    <table>
+      <tbody id="tbody">
+        <tr>
+          <td>First name</td>
+          <td>
+            <input type="text" name="fname" id="fname">
+          </td>
+        </tr>
+        <tr>
+          <td>Middle name</td>
+          <td>
+            <input type="text" name="mname" id="mname">
+          </td>
+        </tr>
+        <tr>
+          <td>Last name</td>
+          <td>
+            <input type="text" name="lname" id="lname">
+          </td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>
+            <input type="text" name="address" id="address">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+    <input type="submit">
+  </form>
+  <br><br>
+  <a href="../">Back</a>
+</body>
+<script>
+  
+</script>
+</html>
