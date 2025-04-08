@@ -2,7 +2,7 @@
 
 ## API Creation (NodeJS)
 
-Before you build your own API endpoint you must know the following JavaScript syntax:
+Before you build your own API endpoint you must have the basic knowledge about the following JavaScript syntax and functions:
 
 ### Arrow Function
 
