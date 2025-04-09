@@ -104,7 +104,7 @@ Now that the express is now initialized, you are now able to create an API endpo
 
 Now that you already know the 4 common type of API endpoint let's proceed on the actual creation.
 
-### 1. API `GET` Endpoint (Data Retrieval)
+### 3. API `GET` Endpoint (Data Retrieval)
 
 To create a `GET` endpoint you need to use the `app` variable that you previously declared.
 
@@ -150,7 +150,7 @@ Once the API endpoint receives the request of the client, the API must respond w
 API Endpoint  --- Response ---> Browser
 ```
 
-## Server Listening Port
+## 4. Server Listening Port
 
 We already created our first API GET Endpoint, the express app must listen to a certain port, usually it is `3000`, the following code will make our express app to listen to port `3000`.
 
@@ -162,7 +162,7 @@ app.listen(3000, () => {
 
 ---
 
-## Running the API Endpoint
+## 5. Running the API Endpoint
 
 After you created the `index.js` file and write the above mentioned code you can run the application using `node` command. The following is the command to run our NodeJS application. Open your terminal again of your vscode and type the following command.
 
@@ -202,6 +202,52 @@ Now that our API Endpoint is running in our server, you can now able to access i
 When you see this output rendered by your browser, it means that we successfully created our API GET endpoint.  
 
 ---
+
+### 1. Serve static files using Express
+
+Express has many use, such as an API endpoints and serving static file (e.g. `.html`, `.js` and `.css`). In your current directory create a folder named `public`, all static files that we want to serve by the express will be created here. 
+
+**1. Create `index.html`**
+
+Inside the `public` folder, create `index.html` file and write the following code.
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple Express Crud</title>
+  </head>
+  <body>
+    <h2>Simple Express CRUD</h2>
+  </body>
+  <script src="./script.js"></script>
+</html>
+```
+
+\
+**2. Create `script.js`**
+
+At the same folder, create the `script.js` file and write the following script.
+
+```javascript
+console.log("Hello World!");
+```
+
+**3. Express Serve**
+
+To make the express app to serve static files, the following script must be added to our `index.js`.
+
+```javascript
+import path from "path";
+
+app.use(express.static(path.join(path.dirname("."), "public")));
+```
+
+Import the `path` library, it is use to join paths. Using `app.use` function we can add a middleware in our case `express.static` middleware. Middleware in express is a function that executes once the client connect to the server, it is executed before all API endpoints. The second line of our code commands our express app to serve static files located in `public` folder.
+
+
+
 ### JavaScript Fetch Function 
 
 Browser can be usefull if we want to test our API endpoint but this is not the proper way, instead we need to use the `fetch` function of JavaScript.
@@ -296,7 +342,7 @@ We created a function (not an arrow function) but you can see that there is an `
 
 The first line in our sample code is just connecting to our API endpoint but it does not yet retrieve the response of the API. The second line does the job of retrieving the API response. The value of `response` variable is now a JSON object. By using `.json()` function on `result` variable the data received by our fetch is automtically parse as JSON data. 
 
----
+
 
 ## JS Fetch and NodeJS API
 
